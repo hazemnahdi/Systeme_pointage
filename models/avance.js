@@ -8,7 +8,7 @@ const AvanceSchema = mongoose.Schema({
      users : [
         {
             type: mongoose.Schema.Types.ObjectId,
-            name:mongoose.Schema.Types.name,
+           
             ref: 'User'
         }
     ]

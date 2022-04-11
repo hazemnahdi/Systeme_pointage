@@ -4,9 +4,12 @@ const passport = require ("passport");
 const jwt = require ("jsonwebtoken");
 const User = require("../models/user");
 const config = require("../config/database");
+
+
 var ObjectId = require('mongodb').ObjectID;
 
 router.post("/register", (req, res, next) => {
+    
     let newUser = new User({
         name: req.body.name,
         email: req.body.email,
@@ -19,7 +22,8 @@ router.post("/register", (req, res, next) => {
         dateEmbauche:req.body.dateEmbauche,
         cin:req.body.cin,
         role:req.body.role,
-        Tel:req.body.Tel
+        Tel:req.body.Tel,
+        
     });
 
     User.addUser(newUser, (err, data)=> {
